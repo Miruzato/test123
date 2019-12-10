@@ -23,7 +23,7 @@ private PreferencesActions preferencesActions = new PreferencesActions();
         preferencesActions.enterEventID(eventID);
     }
 
-    @Then("^I click next button$")
+    @And("^I click next button$")
     public void i_click_next_button() throws Throwable {
         preferencesActions.clickNextButton();
     }
@@ -33,7 +33,7 @@ private PreferencesActions preferencesActions = new PreferencesActions();
         preferencesActions.verifyPrintingPreferencesPage();
     }
 
-    @When("^I select printer$")
+    @And("^I select printer$")
     public void iSelectPrinter() {
         preferencesActions.selectPrinter();
     }
