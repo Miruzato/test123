@@ -1,7 +1,7 @@
 @SignIn
 Feature: User able to Sign in successfully (positive)
 
-    Scenario Outline: : User sign in to wbo
+    Scenario Outline: User sign in to wbo
 
         When I search my Login context
         And I enter the username "<username>"

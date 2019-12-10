@@ -23,7 +23,7 @@ private PreferencesActions preferencesActions = new PreferencesActions();
         preferencesActions.enterEventID(eventID);
     }
 
-    @And("^I click next button$")
+    @Then("^I click next button$")
     public void i_click_next_button() throws Throwable {
         preferencesActions.clickNextButton();
     }
@@ -33,7 +33,7 @@ private PreferencesActions preferencesActions = new PreferencesActions();
         preferencesActions.verifyPrintingPreferencesPage();
     }
 
-    @And("^I select printer$")
+    @When("^I select printer$")
     public void iSelectPrinter() {
         preferencesActions.selectPrinter();
     }
@@ -71,50 +71,5 @@ private PreferencesActions preferencesActions = new PreferencesActions();
     @And("^I scroll through the Upcoming Events carousel$")
     public void iScrollThroughTheUpcomingEventsCarousel() {
         preferencesActions.scrollThroughUpcomingEvents();
-    }
-
-    @Then("^I verify the event is in the venues calendar$")
-    public void iVerifyTheEventIsInTheVenuesCalendar() {
-        preferencesActions.verifyEventInVenues();
-    }
-
-    @And("^I click All Venues$")
-    public void iClickAllVenues() {
-        preferencesActions.clickAllVenuesDropdown();
-    }
-
-    @And("^I uncheck all the venue boxes$")
-    public void iUncheckAllTheVenueBoxes() {
-        preferencesActions.uncheckVenueCheckboxes();
-    }
-
-    @And("^I verify there are no venues$")
-    public void iVerifyThereAreNoVenues() {
-        preferencesActions.verifyNoVenues();
-    }
-
-    @And("^I check the All Venues checkbox$")
-    public void iCheckTheAllVenuesCheckbox() {
-        preferencesActions.checkAllVenuesCheckbox();
-    }
-
-    @And("^I click All Categories$")
-    public void iClickAllCategories() {
-        preferencesActions.clickAllCategoriesDropdown();
-    }
-
-    @And("^I uncheck all the category boxes$")
-    public void iUncheckAllTheCategoryBoxes() {
-        preferencesActions.uncheckCategoryCheckboxes();
-    }
-
-    @And("^I check the All Categories checkbox$")
-    public void iCheckTheAllCategoriesCheckbox() {
-        preferencesActions.checkAllCategoriesCheckbox();
-    }
-
-    @And("^I scroll through the Venues carousel$")
-    public void iScrollThroughTheVenuesCarousel() {
-        preferencesActions.scrollThroughVenues();
     }
 }

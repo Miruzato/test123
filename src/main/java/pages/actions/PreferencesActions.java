@@ -67,7 +67,7 @@ public class PreferencesActions {
     public void clickDoneButton() {
         preferencesLocators.doneButton.click();
         try {
-            Thread.sleep(13000);
+            Thread.sleep(15000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -87,58 +87,5 @@ public class PreferencesActions {
 
         while(!preferencesLocators.secondUpcomingEvent.isDisplayed())
             preferencesLocators.upcomingEventsLeftArrow.click();
-    }
-
-    public void verifyEventInVenues() {
-        Assert.assertTrue(preferencesLocators.eventInVenues.isDisplayed());
-    }
-
-    public void clickAllVenuesDropdown() {
-        preferencesLocators.allVenuesDropdown.click();
-    }
-
-    public void uncheckVenueCheckboxes() {
-        List<WebElement> checkboxes = SeleniumDriver.getDriver().findElements(By.xpath("//div[text()='Venues']/..//div[@type='check']"));
-        JavascriptExecutor js = (JavascriptExecutor) SeleniumDriver.getDriver();
-        js.executeScript("scroll(0, 250);");
-        for (WebElement checkbox : checkboxes) {
-            if(!checkbox.isSelected())
-                checkbox.click();
-        }
-    }
-
-    public void verifyNoVenues() {
-        List<WebElement> venues = preferencesLocators.venueList.findElements(By.xpath(".//*"));
-        Assert.assertEquals(venues.size(), 0);
-    }
-
-    public void checkAllVenuesCheckbox() {
-        preferencesLocators.allVenuesCheckbox.click();
-    }
-
-    public void clickAllCategoriesDropdown() {
-        preferencesLocators.allCategoriesDropdown.click();
-    }
-
-    public void uncheckCategoryCheckboxes() {
-        List<WebElement> checkboxes = SeleniumDriver.getDriver().findElements(By.xpath("//div[text()='Categories']/..//div[@type='check']"));
-        JavascriptExecutor js = (JavascriptExecutor) SeleniumDriver.getDriver();
-        js.executeScript("scroll(0, 500);");
-        for (WebElement checkbox : checkboxes) {
-            if(!checkbox.isSelected())
-                checkbox.click();
-        }
-    }
-
-    public void checkAllCategoriesCheckbox() {
-        preferencesLocators.allCategoriesCheckbox.click();
-    }
-
-    public void scrollThroughVenues() {
-        while(!preferencesLocators.lastVenue.isDisplayed())
-            preferencesLocators.venuesRightArrow.click();
-
-        while(!preferencesLocators.thirdVenue.isDisplayed())
-            preferencesLocators.venuesLeftArrow.click();
     }
 }
