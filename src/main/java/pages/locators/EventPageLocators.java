@@ -42,12 +42,15 @@ public class EventPageLocators {
     @FindBy(how = How.XPATH,using = "//div[text()='Available']")
     public WebElement availableButton;
 
-    @FindBy(how = How.XPATH,using = "(//button[text()='Best Available'])[1]")
-    public WebElement firstBestAvailableButton;
+    @FindBy(how = How.XPATH,using = "(//button[text()='Best Available'])[2]")
+    public WebElement secondBestAvailableButton;
 
     @FindBy(how = How.XPATH,using = "//span[@name='keyboard-arrow-right']")
     public WebElement offersRightArrow;
 
     @FindBy(how = How.XPATH,using = "//span[@name='keyboard-arrow-left']")
     public WebElement offersLeftArrow;
+
+    @FindBy(how = How.XPATH,using = "(//button[text()='Select on Map'])[2]")
+    public WebElement firstSelectOnMapButton;
 }

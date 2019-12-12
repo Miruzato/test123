@@ -18,12 +18,13 @@ Feature: Verify event information
         And I click the done button
         And I click the event in Upcoming Events
         And I click Event Info
-        And I verify that the event info is displayed
+        And I verify the event info is displayed
         Examples:
             | username  | password   | eventID |
             | mmuerzati | october123 | 5079    |
 
     Scenario Outline: User toggles offers
+
         When I search my Login context
         And I enter the username "<username>"
         And I enter the password "<password>"
@@ -39,14 +40,15 @@ Feature: Verify event information
         And I click the done button
         And I click the event in Upcoming Events
         And I click the All button
-        And I verify that an old offer appears
+        And I verify an old offer appears
         And I click the Available button
-        And I verify that the first offer is active
+        And I verify the first offer is active
         Examples:
             | username  | password   | eventID |
             | mmuerzati | october123 | 5079    |
 
     Scenario Outline: User scrolls through offers
+
         When I search my Login context
         And I enter the username "<username>"
         And I enter the password "<password>"

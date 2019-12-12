@@ -47,7 +47,7 @@ public class EventPageActions {
     }
 
     public void verifyOfferIsActive(){
-        Assert.assertTrue(eventPageLocators.firstBestAvailableButton.isEnabled());
+        Assert.assertTrue(eventPageLocators.secondBestAvailableButton.isEnabled());
     }
 
     public void scrollThroughOffers(){
@@ -56,9 +56,16 @@ public class EventPageActions {
     }
 
     public void clickBestAvailableButton() {
-        new WebDriverWait(SeleniumDriver.getDriver(),5).until(ExpectedConditions.visibilityOf(eventPageLocators.firstBestAvailableButton));
+        new WebDriverWait(SeleniumDriver.getDriver(),5).until(ExpectedConditions.visibilityOf(eventPageLocators.secondBestAvailableButton));
         JavascriptExecutor js = (JavascriptExecutor) SeleniumDriver.getDriver();
         js.executeScript("scroll(0, 250);");
-        eventPageLocators.firstBestAvailableButton.click();
+        eventPageLocators.secondBestAvailableButton.click();
+    }
+
+    public void clickSelectOnMapButton(){
+//        new WebDriverWait(SeleniumDriver.getDriver(),5).until(ExpectedConditions.visibilityOf(eventPageLocators.firstSelectOnMapButton));
+        JavascriptExecutor js = (JavascriptExecutor) SeleniumDriver.getDriver();
+        js.executeScript("scroll(0, 250);");
+        eventPageLocators.firstSelectOnMapButton.click();
     }
 }

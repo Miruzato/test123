@@ -16,8 +16,8 @@ public class EventPageStep {
         eventPageActions.clickEventInfoLink();
     }
 
-    @And("^I verify that the event info is displayed$")
-    public void iVerifyThatTheEventInfoIsDisplayed() {
+    @And("^I verify the event info is displayed$")
+    public void iVerifyTheEventInfoIsDisplayed() {
         eventPageActions.verifyEventInfo();
     }
 
@@ -26,8 +26,8 @@ public class EventPageStep {
         eventPageActions.clickAllButton();
     }
 
-    @And("^I verify that an old offer appears$")
-    public void iVerifyThatAnOldOfferAppears() {
+    @And("^I verify an old offer appears$")
+    public void iVerifyAnOldOfferAppears() {
         eventPageActions.verifyOldOffer();
     }
 
@@ -36,8 +36,8 @@ public class EventPageStep {
         eventPageActions.clickAvailableButton();
     }
 
-    @And("^I verify that the first offer is active$")
-    public void iVerifyThatTheFirstOfferIsActive() {
+    @And("^I verify the first offer is active$")
+    public void iVerifyTheFirstOfferIsActive() {
         eventPageActions.verifyOfferIsActive();
     }
 
@@ -49,5 +49,10 @@ public class EventPageStep {
     @And("^I click the Best Available button$")
     public void iClickTheBestAvailableButton() {
         eventPageActions.clickBestAvailableButton();
+    }
+
+    @And("^I click the Select on Map button$")
+    public void iClickTheSelectOnMapButton() {
+        eventPageActions.clickSelectOnMapButton();
     }
 }
