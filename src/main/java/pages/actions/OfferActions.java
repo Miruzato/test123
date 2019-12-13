@@ -38,7 +38,7 @@ public class OfferActions {
     }
 
     public void clickFindTicketsButton(){
-        new WebDriverWait(SeleniumDriver.getDriver(),40).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[contains(@class,'level-selector')])[1]")));
+        new WebDriverWait(SeleniumDriver.getDriver(),45).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[contains(@class,'level-selector')])[1]")));
         offerLocators.findTicketsButton.click();
     }
 
