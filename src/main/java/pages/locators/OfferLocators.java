@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class OfferPageLocators {
+public class OfferLocators {
 
     @FindBy(how = How.XPATH,using = "//div[contains(@class,'up')]")
     public WebElement plusIcon;
@@ -50,4 +50,10 @@ public class OfferPageLocators {
 
     @FindBy(how = How.XPATH,using = "//div[@class='zoom-in']")
     public WebElement zoomInIcon;
+
+    @FindBy(how = How.XPATH,using = "//div[contains(@class,'d2m-map')]")
+    public WebElement map;
+
+    @FindBy(how = How.XPATH,using = "//button[text()='Checkout']")
+    public WebElement checkoutButton;
 }

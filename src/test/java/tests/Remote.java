@@ -12,7 +12,7 @@ import java.util.Map;
         plugin = {"json:target/positive/cucumber.json", "pretty", "html:target/positive/cucumber.html"},
         features = "src/test/resources/features",
         glue = "steps",
-        tags = {"@Dashboard, @EventPage, @Preferences, @SignIn"}
+        tags = {"@Checkout, @Dashboard, @Event, @Offer, @Preferences, @Search, @SignIn"}
 )
 public class Remote extends AbstractTestNGCucumberTests{
     @BeforeClass

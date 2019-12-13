@@ -25,6 +25,7 @@ Feature: Verify event information
             | mmuerzati | october123 | 5079    |
 
     Scenario Outline: User moves price slider
+
         When I search my Login context
         And I enter the username "<username>"
         And I enter the password "<password>"
@@ -48,6 +49,7 @@ Feature: Verify event information
             | mmuerzati | october123 | 5079    |
 
     Scenario Outline: User clicks Find Tickets
+
         When I search my Login context
         And I enter the username "<username>"
         And I enter the password "<password>"
@@ -70,6 +72,7 @@ Feature: Verify event information
             | mmuerzati | october123 | 5079    |
 
     Scenario Outline: User adds more tickets and looks at cart
+
         When I search my Login context
         And I enter the username "<username>"
         And I enter the password "<password>"
@@ -113,8 +116,9 @@ Feature: Verify event information
         And I click the done button
         And I click the event in Upcoming Events
         And I click the Select on Map button
-        And I click the Map Filters down arrow
-        And I click the zoom in icon 5 times
+#        And I click the Map Filters down arrow
+        And I click the zoom in icon 10 times
+        And I click the map
         Examples:
             | username  | password   | eventID |
             | mmuerzati | october123 | 5079    |

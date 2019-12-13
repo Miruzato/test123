@@ -1,4 +1,4 @@
-@EventPage
+@Event
 Feature: Verify event information
 
     Scenario Outline: User looks at event info
