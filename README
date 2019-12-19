@@ -1,0 +1,48 @@
+Automated test example in Java with Cucumber and Selenium WebDriver
+This project is an example of UI automated functional test for Google home page and search using Selenium and Cucumber.
+Test scenarios are described in the feature files located here ./src/test/resources/com/automatedtest/sample.
+For more info about this project, read the article "UI automated test project example with Selenium, Cucumber and Java"
+
+Installation
+You need to have Java 8 JDK installed along with maven.
+To run the tests locally with Chrome, install ChromeDriver from here and add its location to your system PATH.
+To run the tests locally with Firefox, install GeckoDriver from here and add its location to your system PATH.
+
+To install all dependencies, run
+$ mvn clean install
+Running tests
+$ mvn test
+By default, tests will run on Chrome. To change that, specify -Dbrowser={browser} where {browser} is either chrome or firefox
+You can also select specific scenarios to execute using -Dcucumber.options="--tags @your_tag". More info about tags and how to combine them.
+
+
+How to run a smoke test on desktop (remote driver)
+$ mvn -Dtest=Remote test
+
+Framework Architecture
+
+test123
+	|
+	|_src/main/java
+	|	|_pages
+	|	|	|_actions
+	        |_locators
+	        |_utils
+	|	|	     |_Config
+	             |_SeleniumDriver
+	             |...
+	|_src/test/java
+	|	|_steps
+	|	|	|_CheckoutStep.java
+	|	|	|_DashboardStep.java
+	|	|	|...
+	|_src/test/resources
+	|	|_features
+	|	|	|_Checkout.feature
+	|	|	|_Dashboard.feature
+
+
+	src/test/resources/features - all the cucumber features files (files .feature ext) goes here.
+    src/test/java/steps - you can define step defintion under this package for your feature steps.
+    src/main/java/pages/utils/SeleniumDriver - If you want to run your test on saucelab and browserstack platforms, you need to add its configuration such as username, access key here.
+    src/main/java/pages/utils/Config - When you run your test on remote browser/platform you have to provide capabilities and platform information here.

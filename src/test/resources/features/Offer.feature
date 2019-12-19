@@ -1,4 +1,4 @@
-@OfferPage
+@Offer
 Feature: Verify event information
 
     Scenario Outline: User changes number of tickets

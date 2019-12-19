@@ -1,4 +1,4 @@
-@CheckoutPage
+@Checkout
 Feature: Checkout tickets
 
     Scenario Outline: User clicks event info
