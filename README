@@ -46,3 +46,105 @@ test123
     src/test/java/steps - you can define step defintion under this package for your feature steps.
     src/main/java/pages/utils/SeleniumDriver - If you want to run your test on saucelab and browserstack platforms, you need to add its configuration such as username, access key here.
     src/main/java/pages/utils/Config - When you run your test on remote browser/platform you have to provide capabilities and platform information here.
+    
+    
+    case "RemoteAndroidApp":
+                caps = DesiredCapabilities.android();
+                caps.setCapability("appiumVersion", "1.7.2");
+                caps.setCapability("deviceName","Samsung Galaxy S8 Plus GoogleAPI Emulator");
+                caps.setCapability("deviceOrientation", "portrait");
+                caps.setCapability("browserName", "");
+                caps.setCapability("platformVersion","7.1");
+                caps.setCapability("platformName","Android");
+                caps.setCapability("app","sauce-storage:EllentubeNative.apk");
+                jobName = scenario.getName();
+                caps.setCapability("name", jobName);
+                driver = new AndroidDriver(new URL(URL), caps);
+                sessionId = (((AndroidDriver) driver).getSessionId()).toString();
+                break;
+
+            case "RemoteIOSApp":
+                caps = DesiredCapabilities.iphone();
+                caps.setCapability("deviceName","iPhone X Simulator");
+                caps.setCapability("deviceOrientation", "portrait");
+                caps.setCapability("platformVersion","11.2");
+                caps.setCapability("platformName", "iOS");
+                caps.setCapability("browserName", "");
+                caps.setCapability("app","sauce-storage:Ellentube.ipa");
+                jobName = scenario.getName();
+                caps.setCapability("name", jobName);
+                driver = new IOSDriver<>(new URL(URL), caps);
+                sessionId = (((IOSDriver) driver).getSessionId()).toString();
+                break;
+		
+		README
+Automated test example in Java with Cucumber and Selenium WebDriver
+This project is an example of UI automated functional test for Google home page and search using Selenium and Cucumber.
+Test scenarios are described in the feature files located here ./src/test/resources/com/automatedtest/sample.
+For more info about this project, read the article "UI automated test project example with Selenium, Cucumber and Java"
+
+Installation
+You need to have Java JDK installed along with maven.
+To run the tests locally with Chrome, install ChromeDriver from here and add its location to your system PATH.
+To run the tests locally with Firefox, install GeckoDriver from here and add its location to your system PATH.
+
+To install all dependencies, run
+$ mvn clean install
+Running tests
+$ mvn test
+By default, tests will run on Chrome. To change that, specify -Dbrowser={browser} where {browser} is either chrome or firefox
+You can also select specific scenarios to execute using -Dcucumber.options="--tags @your_tag". More info about tags and how to combine them.
+
+
+How to run a smoke test on desktop (remote driver)
+$ mvn clean install test
+$ mvn -Dtest=Remote test
+$ mvn -Dtest=iOSmobileWeb test
+
+
+Running on the CI/CD (Jenkins/Bamboo)
+
+Setting up environment variables
+
+Key          Value
+Host         Remote  or   MobileWeb or Tablet
+Env          QA      or   Prod
+$             regression or smoke
+
+Schedule the test run time
+Configure the Pipeline for a specific date & time
+Configure the Pipeline by each commit from Tester or Dev
+Configure the Pipeline by each build from
+Configure the Pipeline by each build from Dev
+
+
+Framework Architecture
+
+Project-FA-POC
+	|
+	|_src/main/java
+	|	|_pages
+	|	|	|_actions
+	        |_locators
+	        |_utils
+	|	|	     |_Config
+	             |_SeleniumDriver
+	             |...
+	|_src/test/java
+	|	|_steps
+	|	|	|_xxStep.java
+	|	|	|_xxStep.java
+	|	|	|...
+	|_src/test/resources
+	|	|_features
+	|	|	|_xx.feature
+	|	|	|_xx.feature
+
+
+	src/test/resources/features - all the cucumber features files (files .feature ext) goes here.
+    src/test/java/steps - you can define step defintion under this package for your feature steps.
+    src/main/java/pages/utils/SeleniumDriver - If you want to run your test on saucelab and browserstack platforms, you need to add its configuration such as username, access key here.
+    src/main/java/pages/utils/Config - When you run your test on remote browser/platform you have to provide capabilities and platform information here.
+
+
+    
